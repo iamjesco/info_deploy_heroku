@@ -6,7 +6,7 @@ I created this repo to remind myself later what steps to take in order to deploy
  
  ### Create App
  
-This step can be done before or after the app's created locally
+This step should be done first in order to get the app's name for later.
  ```
  1. Log into your Heroku account
  2. Click on the 'new' button and choose 'Create App'
@@ -23,8 +23,9 @@ This step can be done before or after the app's created locally
 5. Add 'whitenoise.middleware.WhiteNoiseMiddleware', to the settings file MIDDLEWARE right under   
    'django.middleware.security.SecurityMiddleware', 
 6. Add STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') to the settings file Also at the top "import os"
-7. Set DEBUG = False
-8. Create a requirements.txt file. I use "pip freeze > requirements.txt" 
+7. Add localhost and app to ALLOWED_HOSTS = ['127.0.0.1', 'yourappname.herokuapp.com']
+8. Set DEBUG = False
+9. Create a requirements.txt file. I use "pip freeze > requirements.txt" 
 ```
 
 ### Add heroku repo to project
@@ -42,6 +43,8 @@ This step can be done before or after the app's created locally
 
 
 And that's about it... Hopefully this works fine. 
+
+Mind you this doesn't include the whole MEDIA files thing
 
 Jurgen
 
